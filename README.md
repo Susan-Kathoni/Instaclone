@@ -11,7 +11,7 @@ The application is like instagram's replica whereby users can create an account,
 
 ## Technologies Used
 
-1. Python 3.8.2
+. Python 3.8.2
 2. Git
 3. Django3
 4. Bootstrap
@@ -19,7 +19,7 @@ The application is like instagram's replica whereby users can create an account,
 6. HTML
 7. CSS
 8. Postres
-
+9. Figma - https://www.figma.com/file/UeQoORhFIBvVSnz2u9hcWf/Untitled?node-id=0%3A1
 
 ## Features
 
@@ -43,13 +43,8 @@ A user can:
 4. Run python3 manage.py runserver to launch the app
 
 ## Dependencies
-
-1. https://cloudinary.com/documentation/django_image_and_video_upload
-2. Youtube
-3. https://dev.to/ebereplenty/crud-app-with-nodejs-cloudinary-postgresql-and-heroku-1751
-
-## Known Bugs
-
+1. Youtube - https://www.youtube.com/watch?v=PBlNjyRnmJQ&list=PLSk2ugK-w8UyWws8SMeet4MbiNYnJB2mU
+           - https://www.youtube.com/watch?v=J2jy92lllzE&t=262s
 
 
 ## Contact Details
@@ -63,6 +58,6 @@ Kindly reach out to me via email: kathonisusan@gmail.com
 
 ## Codebeat
 
-<!-- [![codebeat badge](https://codebeat.co/badges/7bbb17b5-2cde-4108-aac0-eefcd439cf9f)](https://codebeat.co/projects/github-com-susan-kathoni-photostudio-master) -->
+[![codebeat badge](https://codebeat.co/badges/7bbb17b5-2cde-4108-aac0-eefcd439cf9f)](https://codebeat.co/projects/github-com-susan-kathoni-instaclone-master)
 
 © [Susan Kathoni](https://github.com/Susan-Kathoni)

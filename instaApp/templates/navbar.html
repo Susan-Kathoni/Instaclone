@@ -1,9 +1,11 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <nav class="navbar navbar-expand-lg bg-info" id="navMain">
     <div class="container">
-        <a class="navbar-brand" href="{% url 'home'%}"><img src="/static/photos/instagram_Icon.jpeg " style="height: 10vh;width:05vw"> |</a>
-                <div class="insta" style="font-family: 'Pacifico', cursive; font-size:30px;">Instagram</div>
+        <a class="navbar-brand" href="{% url 'home'%}"><img src="/static/photos/instagram_Icon.jpeg "
+                style="height: 10vh;width:05vw"> |</a>
+        <div class="insta" style="font-family: 'Pacifico', cursive; font-size:30px;">Instagram</div>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -17,31 +19,35 @@
                         <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_results' %}">
                             <input style="text-align: center;" class="form-control" name="username" type="search"
                                 placeholder="Search... " aria-label="Search">
+                            <button class="btn btn-secondary" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
                         </form>
                     </div>
                 </div>
             </div>
-            {%endif%}
-            {% if request.user.is_authenticated %}
-            <a class="nav-link open-nav" href="{% url 'upload_image'%}">
-                <i class="fa fa-upload" style="font-size: 30px;color: black; padding-right:10px;"></i></a>
-            {%endif%}
-                    </i></a>
-            <a class="navbar-brand" href="{% url 'profile' %}"><i class="fa fa-compass"
-                    style="font-size:40px;padding-right:10px;color:black;"></i></a>
-            <ul class="navbar-nav ml-auto" style="list-style: none">
-                <li class="nav-item">
-                    {% if request.user.is_authenticated %}
-                    <a class="nav-link open-nav" href="{% url 'profile'%}"><i class="fa fa-user"
-                            style="font-size:30px;color:black;padding-right: 20px;"></i></a>
-                            {% endif %}
-                </li>
-            </ul>
-            {% if request.user.is_authenticated %}
-            <ul class="navbar-nav ml-auto" style="list-style: none; color: black; padding-left: 10px;">
-                <li> <a href="accounts/logout">Logout</a></li>
-            </ul>
-            {%endif%}
         </div>
+        {%endif%}
+        {% if request.user.is_authenticated %}
+        <a class="nav-link open-nav" href="{% url 'upload_image'%}">
+            <i class="fa fa-upload" style="font-size: 30px;color: black; padding-right:10px;"></i></a>
+        {%endif%}
+        </i></a>
+        <a class="navbar-brand" href="{% url 'profile' %}"><i class="fa fa-compass"
+                style="font-size:40px;padding-right:10px;color:black;"></i></a>
+        <ul class="navbar-nav ml-auto" style="list-style: none">
+            <li class="nav-item">
+                {% if request.user.is_authenticated %}
+                <a class="nav-link open-nav" href="{% url 'profile'%}"><i class="fa fa-user"
+                        style="font-size:30px;color:black;padding-right: 20px;"></i></a>
+                {% endif %}
+            </li>
+        </ul>
+        {% if request.user.is_authenticated %}
+        <ul class="navbar-nav ml-auto" style="list-style: none; color: black; padding-left: 10px;">
+            <li> <a href="accounts/logout">Logout</a></li>
+        </ul>
+        {%endif%}
+    </div>
     </div>
 </nav>
