@@ -11,7 +11,7 @@ The application is like instagram's replica whereby users can create an account,
 
 ## Technologies Used
 
-. Python 3.8.2
+1. Python 3.8.2
 2. Git
 3. Django3
 4. Bootstrap
