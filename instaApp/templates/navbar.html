@@ -1,33 +1,47 @@
-{% load static %}
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="nav">
-        <div class="row">
-          <div class="col-sm-2">
-            <h4 class="text-white text-center intro" style="font-family: 'Aclonica', sans-serif; color:wheat;">INSTACLONE</h4>
-          </div>
-  
-          <div class="col-sm-1 col-md-2">
-            <a class="active" href="{% url 'home' %}" style="font-size: 20px;"><i class="fa fa-fw fa-home" style="color: white;"></i> Home</a></div>
-          <!-- <div class="col-sm-2"> -->
-          <a href="{% url 'about' %}" style="font-size: 20px;"> <i class="fa fa-info-circle" style="color: white;" aria-hidden="true"></i>About</a>
-         
-      
-          
-          <div class="col-sm-4 col-md-3 navbar-right">
-  
-            <form class="navbar-form" role="search" action="{% url 'search_results' %}">
-  
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="" name="category">
-                <div class="input-group-btn">
-                  <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<nav class="navbar navbar-expand-lg bg-info" id="navMain">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home'%}"><img src="/static/photos/instagram_Icon.jpeg " style="height: 10vh;width:05vw"> |</a>
+                <div class="insta" style="font-family: 'Pacifico', cursive; font-size:30px;">Instagram</div>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <div class="container-fluid">
+                {% if user.is_authenticated %}
+                <div class="row">
+                    <div class="text-center">
+                        <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_results' %}">
+                            <input style="text-align: center;" class="form-control" name="username" type="search"
+                                placeholder="Search... " aria-label="Search">
+                        </form>
+                    </div>
                 </div>
-              </div>
-  
-  
-              </form>
-          </div>
+            </div>
+            {%endif%}
+            {% if request.user.is_authenticated %}
+            <a class="nav-link open-nav" href="{% url 'upload_image'%}">
+                <i class="fa fa-upload" style="font-size: 30px;color: black; padding-right:10px;"></i></a>
+            {%endif%}
+                    </i></a>
+            <a class="navbar-brand" href="{% url 'profile' %}"><i class="fa fa-compass"
+                    style="font-size:40px;padding-right:10px;color:black;"></i></a>
+            <ul class="navbar-nav ml-auto" style="list-style: none">
+                <li class="nav-item">
+                    {% if request.user.is_authenticated %}
+                    <a class="nav-link open-nav" href="{% url 'profile'%}"><i class="fa fa-user"
+                            style="font-size:30px;color:black;padding-right: 20px;"></i></a>
+                            {% endif %}
+                </li>
+            </ul>
+            {% if request.user.is_authenticated %}
+            <ul class="navbar-nav ml-auto" style="list-style: none; color: black; padding-left: 10px;">
+                <li> <a href="accounts/logout">Logout</a></li>
+            </ul>
+            {%endif%}
         </div>
-      </div>
-  </nav>
+    </div>
+</nav>
